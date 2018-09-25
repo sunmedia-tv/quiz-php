@@ -1,0 +1,42 @@
+SunMedia\Entity\Integration:
+    type: entity
+    table: null
+    repositoryClass: SunMedia\Repository\IntegrationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        currency:
+            type: string
+            length: 255
+        status:
+            type: string
+            length: 255
+        price:
+            type: float
+        enabled:
+            type: boolean
+        enabledAt:
+            type: datetime_immutable
+            nullable: true
+        createdAt:
+            type: datetime_immutable
+        updatedAt:
+            type: datetime_immutable
+        deleted:
+            type: boolean
+        deletedAt:
+            type: datetime_immutable
+            nullable: true
+    manyToOne:
+        site:
+            targetEntity: SunMedia\Entity\Site
+            inversedBy: integrations
+            cascade: ["persist", "merge"]
+    lifecycleCallbacks: {  }

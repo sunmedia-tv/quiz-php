@@ -1,0 +1,10 @@
+create:
+    path: /integration/create
+    methods:
+        - post
+    controller: SunMedia\Controller\CreateIntegrationAction
+publish:
+    path: /integration/publish
+    methods:
+        - post
+    controller: SunMedia\Controller\PublishIntegrationAction
